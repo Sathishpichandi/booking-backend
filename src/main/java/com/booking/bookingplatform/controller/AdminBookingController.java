@@ -1,0 +1,24 @@
+package com.booking.bookingplatform.controller;
+
+import com.booking.bookingplatform.repository.BookingRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/bookings/admin")
+public class AdminBookingController {
+
+    private final BookingRepository bookingRepository;
+
+    public AdminBookingController(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
+
+    // ================= VIEW ALL BOOKINGS (ADMIN ONLY) =================
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllBookings() {
+        return ResponseEntity.ok(bookingRepository.findAll());
+    }
+}
