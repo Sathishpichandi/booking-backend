@@ -5,7 +5,7 @@ import com.booking.bookingplatform.repository.BusRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+ 
 
 @RestController
 @RequestMapping("/api/admin/buses")
